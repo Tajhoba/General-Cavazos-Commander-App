@@ -22,3 +22,13 @@ public class App
 		int lastPerformedIndex = -1, lastUndoneIndex = -1;
 		
 		do {
+			System.out.println("----------------------------------------------------------");
+			System.out.println("General Cavazos Commander App");
+			System.out.println("----------------------------------------------------------");
+			System.out.println("i        Issue a command");
+			System.out.println("l        List all the commands");
+			System.out.println("u        Undo the last command that was issued");
+			System.out.println("r        Redo the last command that was issued");
+			System.out.println("q        Quit");
+			System.out.println("----------------------------------------------------------");
+			System.out.print("Enter a command:");
