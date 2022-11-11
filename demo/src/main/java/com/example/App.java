@@ -31,4 +31,36 @@ public class App
 			System.out.println("r        Redo the last command that was issued");
 			System.out.println("q        Quit");
 			System.out.println("----------------------------------------------------------");
-			System.out.print("Enter a command:");
+			System.out.print("Enter a command:");			
+			String str = sc.nextLine();    
+			choice = str.charAt(0);
+			
+			if(choice == 'i') {
+				int randIndex = rand.nextInt(commandArray.length);
+				System.out.println("----- Issuing a random commands from General Cavazos -----");
+				System.out.println(commandArray[randIndex]);
+				lastPerformedIndex = randIndex;
+			} else if(choice == 'l') {
+				System.out.println("----- List of all commands -----");
+				print(commandArray);
+			} else if(choice == 'u') {
+				if(lastPerformedIndex == -1)
+					System.out.println("No commands performed last!!");
+				else {
+					System.out.println("----- Undoing the last performed commands from General Cavazos -----");
+					System.out.println(commandArray[lastPerformedIndex]);
+					lastUndoneIndex = lastPerformedIndex;
+					lastPerformedIndex = -1;
+				}
+			} else if(choice == 'r') {
+				if(lastUndoneIndex == -1)
+					System.out.println("No commands performed undone!!");
+				else {
+					System.out.println("----- Redoing the last undone commands from General Cavazos -----");
+					System.out.println(commandArray[lastUndoneIndex]);
+					lastPerformedIndex = lastUndoneIndex;
+					lastUndoneIndex = -1;
+				}
+			} 
+			
+		}while(choice != 'q');
