@@ -1,13 +1,7 @@
-package com.example;
+package com.student;
 
-/**
- * Hello world!
- *
- */
+import java.util.*;
+import org.json.simple.*;
+
 public class App 
 {
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
-    }
-}
