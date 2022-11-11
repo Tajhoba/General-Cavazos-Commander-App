@@ -13,3 +13,12 @@ public class App
 		JSONArray commandJSONArray = JSONFile.readArray(fileName);
 		String[] commandArray = getCommandArray(commandJSONArray);
 		System.out.println(commandArray);
+		
+		Random rand = new Random();
+		
+		Scanner sc = new Scanner(System.in); 
+		char choice = ' ';
+		
+		int lastPerformedIndex = -1, lastUndoneIndex = -1;
+		
+		do {
